@@ -13,7 +13,7 @@ class Juego:
         self.comenzar_juego(turnos)
     
     def read_file(self):
-        rutaarchivo=os.path.join("Documents","PA","Ejercicios","S1","cartas.csv")
+        rutaarchivo=os.path.join("cartas.csv")
         with open(rutaarchivo, "rt") as archivo:
             lineas=archivo.readlines()
         mazo=[]

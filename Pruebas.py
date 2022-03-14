@@ -1,7 +1,7 @@
 import os
 import random
 ################################################### importar cartas
-rutaarchivo=os.path.join("Documents","PA","Ejercicios","S1","cartas.csv")
+rutaarchivo=os.path.join("cartas.csv")
 with open(rutaarchivo, "rt") as archivo:
     lineas=archivo.readlines()
 cartas=[]
@@ -24,8 +24,5 @@ rangoj2=len(j2)
 print(rangoj1)
 print(rangoj2)
 ################################################### ataque
-random.shuffle(j1)
-random.shuffle(j2)
-ptos_ataque = atacante.ataque
-ptos_defensa = defensa.defensa
+
 
