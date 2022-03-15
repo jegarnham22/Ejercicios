@@ -35,30 +35,49 @@ class Juego:
     def atacar(self, atacante, defensor):
         random.shuffle(atacante)
         random.shuffle(defensor)
+        print(atacante)
+        print(defensor)
         ptos_ataque=atacante[0][1]
         ptos_defensa=defensor[0][2]
+        print(ptos_ataque)
+        print(ptos_defensa)
         if ptos_ataque > ptos_defensa:
             defensor.pop(0)
-            print(f"el jugador atacante gana este turno")
+            print(f"El jugador atacante gana este turno")
+
         elif ptos_defensa > ptos_ataque:
             atacante.pop(0)
-            print(f"el jugador defensor gana este turno")
+            print(f"El jugador defensor gana este turno")
 
         # # Rellenar aquí
     
     def comenzar_juego(self, turnos):
         for i in range(1, turnos + 1):
             print(f"Turno número {i}")
-            if i % 2 and len(self.j1)>0 and len(self.j2)>0:
-                self.atacar(self.j1,self.j2)
-                # Ataca el jugador 1
-                # Rellenar aquí
+            if len(self.j1)>0 and len(self.j2)>0:
+                if i % 2:
+                    print(f"Ataca el jugador 1")
+                    self.atacar(self.j1,self.j2)
+                    cartasj1=len(self.j1)
+                    cartasj2=len(self.j2)
+                    print(f"Al jugador 1 le quedan {cartasj1} cartas y al jugador 2 le quedan {cartasj2} cartas")
+                    # Ataca el jugador 1
+                    # Rellenar aquí
                 
-            elif len(self.j1)>0 and len(self.j2)>0:
-                self.atacar(self.j2,self.j1)
-                # Ataca el jugador 2
-                # Rellenar aquí
-                
+                else:
+                    print(f"Ataca el jugador 2")
+                    self.atacar(self.j2,self.j1)
+                    cartasj1=len(self.j1)
+                    cartasj2=len(self.j2)
+                    print(f"Al jugador 1 le quedan {cartasj1} cartas y al jugador 2 le quedan {cartasj2} cartas")
+                    # Ataca el jugador 2
+                    # Rellenar aquí
+            elif len(self.j1) == 0:
+                print("Ha ganado el jugador 2")
+                break
+            elif len(self.j2) == 0:
+                print("Ha ganado el jugador 1")
+                break
 
 
 juego = Juego(10)
