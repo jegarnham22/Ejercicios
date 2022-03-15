@@ -9,6 +9,7 @@ for m in lineas:
     monstruo=m.strip().split(",")
     cartas.append(monstruo)
 cartas.remove(['nombre', 'ataque', 'defensa'])
+print(cartas[0])
 ################################################### repartir cartas
 j1=[]
 j2=[]
@@ -24,5 +25,7 @@ rangoj2=len(j2)
 print(rangoj1)
 print(rangoj2)
 ################################################### ataque
-
-
+lista=[["monstruo1", "300", "200"], ["monstruo2", "100", "500"]]
+print(lista)
+lista.pop(0)
+print(lista)
