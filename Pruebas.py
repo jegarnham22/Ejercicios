@@ -1,31 +1,22 @@
-import os
-import random
-################################################### importar cartas
-rutaarchivo=os.path.join("cartas.csv")
-with open(rutaarchivo, "rt") as archivo:
-    lineas=archivo.readlines()
-cartas=[]
-for m in lineas:
-    monstruo=m.strip().split(",")
-    cartas.append(monstruo)
-cartas.remove(['nombre', 'ataque', 'defensa'])
-print(cartas[0])
-################################################### repartir cartas
-j1=[]
-j2=[]
-rangot=10
-rangom=5
-random.shuffle(cartas)
-for i in range(0,rangom):
-    j1.append(cartas[i])
-for k in range(rangom,rangot):
-    j2.append(cartas[k])
-rangoj1=len(j1)
-rangoj2=len(j2)
-print(rangoj1)
-print(rangoj2)
-################################################### ataque
-lista=[["monstruo1", "300", "200"], ["monstruo2", "100", "500"]]
-print(lista)
-lista.pop(0)
-print(lista)
+p1 = [6, 5, 4, 3, 2, 1]
+p2 = []
+p3 = []
+
+def mover_disco(pilar_origen, pilar_destino): 
+    stack1=pilar_origen
+    stack2=pilar_destino
+
+    salida=stack1.pop()
+    stack2.append(salida)
+
+def ToH(n , p1, p2, p3):
+    if n==1:
+        print("Disk 1 from",p1,"to",p2)
+        mover_disco(p1,p2)
+        return 
+    ToH(n-1, p1, p3, p2)
+    print("Disk",n,"from",p1,"to",p2)
+    mover_disco(p1,p2)
+    ToH(n-1, p3, p2, p1)
+          
+ToH(6,p1,p2,p3)
