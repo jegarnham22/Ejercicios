@@ -12,7 +12,7 @@ def dic1(paises,personas):
 
     print(personas_por_paises)
 
-def dic2(paises,personas):
+def dic2(personas):
     i = 0
     personas_por_edad={}
     while i < 100:
@@ -34,7 +34,7 @@ for i in range(100):
     nueva_persona = Persona(randint(0, 100), choice(paises))
     personas.append(nueva_persona)
 
-dic1(paises,personas)
+dic1(personas)
 
 
 
