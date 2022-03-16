@@ -26,16 +26,14 @@ def izquierda(tablero, pos):
     tablero[pos[1]][pos[0]] = 'o'
     return tablero, pos
 
-funciones=[bajar,subir,derecha,izquierda]
-for funcion in funciones:
-    dic=defaultdict(funcion)
-print(dic)
+Dic={"a":izquierda(tablero,pos),"s":bajar(tablero,pos),"d":derecha(tablero,pos),"w":subir(tablero,pos)}
 
 while True:
     for fila in tablero:
         print("".join(fila))
     accion = input("Ingresa acción: ")
     if accion in "asdw":
+        Dic[accion]
         pass
     elif accion == "q":
         print("¡Adios!")

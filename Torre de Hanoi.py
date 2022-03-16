@@ -4,6 +4,7 @@ class TorreDeHanoi:
         self.p1 = [6, 5, 4, 3, 2, 1]
         self.p2 = []
         self.p3 = []
+
         
     def mover_disco(self, pilar_origen, pilar_destino): 
         stack1=pilar_origen
