@@ -10,8 +10,22 @@ def dic1(paises,personas):
                 personaspais.append(personas[pp])
         personas_por_paises[pais]=personaspais
 
-    #print(personas_por_paises)
+    print(personas_por_paises)
 
+def dic2(paises,personas):
+    i = 0
+    personas_por_edad={}
+    while i < 100:
+        edadpersonas=[]
+        tuplaedad=(i,i+10)
+        for e in range(0,len(personas)):
+            if personas[e][0] > i and personas[e][0] <= i+10:
+                edadpersonas.append(personas[e])
+        personas_por_edad[tuplaedad]=edadpersonas
+        i=i+10
+
+    print(personas_por_edad)
+    
 paises = ['Argentina', 'Bolivia', 'Chile', 'Perú','Colombia']
 Persona = namedtuple("Persona", 'edad, nacionalidad')
 
@@ -20,19 +34,7 @@ for i in range(100):
     nueva_persona = Persona(randint(0, 100), choice(paises))
     personas.append(nueva_persona)
 
-i = 0
-personas_por_edad={}
-while i < 100:
-    edadpersonas=[]
-    tuplaedad=(i,i+10)
-    for e in range(0,len(personas)):
-        if personas[e][0] > i and personas[e][0] <= i+10:
-            edadpersonas.append(personas[e])
-    personas_por_edad[tuplaedad]=edadpersonas
-    i=i+10
-
-print(personas_por_edad)
-    
+dic1(paises,personas)
 
 
 
