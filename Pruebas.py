@@ -19,4 +19,7 @@ def ToH(n , p1, p2, p3):
     mover_disco(p1,p2)
     ToH(n-1, p3, p2, p1)
           
-ToH(6,p1,p2,p3)
+#################
+dic={"Mensaje":["main.py", "windows.py", "user.txt"]}
+print(dic)
+
