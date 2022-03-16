@@ -34,7 +34,8 @@ for i in range(100):
     nueva_persona = Persona(randint(0, 100), choice(paises))
     personas.append(nueva_persona)
 
-dic1(personas)
+dic1(paises,personas)
+dic2(personas)
 
 
 
