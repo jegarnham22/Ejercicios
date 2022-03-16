@@ -1,21 +1,17 @@
 class TorreDeHanoi:
     
-    def __init__(self,n):
-        self.bloques = n
+    def __init__(self):
         self.p1 = [6, 5, 4, 3, 2, 1]
         self.p2 = []
         self.p3 = []
         
-    def mover_disco(self, pilar_origen, pilar_destino): #que recibe el número del pilar desde donde sale el disco y el número del pilar al que llega un disco.
+    def mover_disco(self, pilar_origen, pilar_destino): 
         stack1=pilar_origen
         stack2=pilar_destino
         salida=stack1.pop()
         stack2.append(salida)
-        # Recuerda que debes sacar el elemento que está más arriba en el pilar de origen
-        # y colocarlo en lo más alto del pilar de destino
-        # Sacar el disco
 
-    def ToH(n , p1, p2, p3):
+    def ToH(self, n , p1, p2, p3):
         if n==1:
             print("Disk 1 from",p1,"to",p2)
             mover_disco(p1,p2)
@@ -48,3 +44,4 @@ class TorreDeHanoi:
             output += fila + "\n"
         output += "=" * 7 + "\n"
         return output
+
