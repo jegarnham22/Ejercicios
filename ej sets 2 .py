@@ -13,16 +13,22 @@ set_gigante = set(range(ELEMENTOS))
 
 tiempo_total_set=0
 tiempo_total_lista=0
-
-for i in range(100):
+registro=[]
+i=1
+while i <=100:
     elemento=randint(0,ELEMENTOS)
-    tiempo_set=pertenencia_cronometrada(elemento,set_gigante)
-    tiempo_total_set=tiempo_total_set+tiempo_set
-    tiempo_lista=pertenencia_cronometrada(elemento,lista_gigante)
-    tiempo_total_lista=tiempo_total_lista+tiempo_lista
-    print(f"set  -- La búsqueda de {elemento} demoró... {tiempo_set:.6f} segundos.")
-    print(f"list -- La búsqueda de {elemento} demoró... {tiempo_lista:.6f} segundos.")
-
+    print(elemento)
+    if elemento not in registro:
+        registro.append(elemento)
+        tiempo_set=pertenencia_cronometrada(elemento,set_gigante)
+        tiempo_total_set=tiempo_total_set+tiempo_set
+        tiempo_lista=pertenencia_cronometrada(elemento,lista_gigante)
+        tiempo_total_lista=tiempo_total_lista+tiempo_lista
+        print(f"set  -- La búsqueda de {elemento} demoró... {tiempo_set:.6f} segundos.")
+        print(f"list -- La búsqueda de {elemento} demoró... {tiempo_lista:.6f} segundos.")    
+        i=i+1
+    else:
+        i=i
 lista_promedio=tiempo_total_lista/100
 set_promedio=tiempo_total_set/100
 
